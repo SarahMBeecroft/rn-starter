@@ -12,29 +12,20 @@ const SquareScreen = () => {
 
   // Helper function to ensure color doesn't exceed 255 or go negative
   const setColor = (color, change) => {
-    console.log(color);
-    // color === 'red', 'green', 'blue'
-    // change === +15, -15
-    if (color === 'red') {
-      if (red + change > 255 || red + change < 0) {
-        return;
-      } else {
-        setRed(red + change);
-      }
-    }
-    if (color === 'blue') {
-      if (blue + change > 255 || blue + change < 0) {
-        return;
-      } else {
-        setBlue(blue + change);
-      }
-    }
-    if (color === 'green') {
-      if (green + change > 255 || green + change < 0) {
-        return;
-      } else {
-        setGreen(green + change);
-      }
+    switch (color) {
+      case 'red':
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);
+        break;
+      case 'green':
+        green + change > 255 || green + change < 0
+          ? null
+          : setGreen(green + change);
+        break;
+      case 'blue':
+        blue + change > 255 || blue + change < 0
+          ? null
+          : setBlue(blue + change);
+        break;
     }
   };
 
