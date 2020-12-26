@@ -25,7 +25,8 @@ const SquareScreen = () => {
         blue + change > 255 || blue + change < 0
           ? null
           : setBlue(blue + change);
-        break;
+      default:
+        return;
     }
   };
 
